@@ -1,38 +1,20 @@
-# sv
+a deployed version can be found [here](https://gdgcf.vercel.app)
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+### quick start
 
-## Creating a project
+step 1: make sure you have node installed
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+step 2: install dependencies, i recommend bun or pnpm as a pkg manager, but you can use any.
 
 ```bash
-npm run dev
+git clone https://github.com/vimfn/gdgc_task_round_frontend --depth=1
+cd gdgc_task_round_frontend
 
-# or start the server and open the app in a new browser tab
+npm i # or bun i
 npm run dev -- --open
-```
 
-## Building
-
-To create a production version of your app:
-
-```bash
+# to build
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+ps, maybe i could have given animations a try, this is the bare minimum and im not a frontend guy.
