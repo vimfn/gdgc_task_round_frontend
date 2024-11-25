@@ -30,10 +30,10 @@
 	    <p class="text-black">YOUR</p>
 	    <p class="text-black">BUSINESS</p>
 	    <p class="text-black">BOOST</p>
-	    <img src="images/3.png" alt="woman" class="top-1 bottom-20 w-full object-cover absolute"/>
-	    <button class="bg-transparent border-black border text-black px-8 py-3 rounded-full mt-4 flex items-center justify-between w-full">
+	    <img src="images/3.png" alt="woman" class="overflow-hidden hidden md:inline md:-top-9 md:bottom-20 w-full object-cover absolute z-[1]"/>
+	    <button class="bg-transparent border-black border text-black px-8 py-3 rounded-full mt-4 flex items-center justify-between w-[90%] z-50 absolute bottom-5 -left-1 mx-5">
 		Book Demo Call
-		<span class="text-white bg-black rounded-full w-8 h-8">→</span>
+		<span class="flex-end text-white bg-black rounded-full w-8 h-8 pt-1">→</span>
 	    </button>
     </div>
 </div>
