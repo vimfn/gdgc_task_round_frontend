@@ -1,8 +1,12 @@
 <script>
 	import { LogIn } from 'lucide-svelte';
-</script>
+	
+	let isMobileMenuOpen = false;
 
-<!-- Navigation -->
+	function toggleMobileMenu() {
+		isMobileMenuOpen = !isMobileMenuOpen;
+	}
+</script>
 
 <nav class="container mx-auto">
 	<div class="mx-auto">
@@ -13,7 +17,8 @@
 					type="button"
 					class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
 					aria-controls="mobile-menu"
-					aria-expanded="false"
+					aria-expanded={isMobileMenuOpen}
+					on:click={toggleMobileMenu}
 				>
 					<span class="absolute -inset-0.5"></span>
 					<span class="sr-only">Open main menu</span>
@@ -23,7 +28,7 @@
               Menu open: "hidden", Menu closed: "block"
             -->
 					<svg
-						class="block size-6"
+						class={`${isMobileMenuOpen ? 'hidden' : 'block'} size-6`}
 						fill="none"
 						viewBox="0 0 24 24"
 						stroke-width="1.5"
@@ -43,7 +48,7 @@
               Menu open: "block", Menu closed: "hidden"
             -->
 					<svg
-						class="hidden size-6"
+						class={`${isMobileMenuOpen ? 'block' : 'hidden'} size-6`}
 						fill="none"
 						viewBox="0 0 24 24"
 						stroke-width="1.5"
@@ -91,36 +96,19 @@
 							<LogIn class="m-1 p-1" size="24" />
 						</button>
 					</div>
-
-					<!--
-              Dropdown menu, show/hide based on menu state.
-  
-              Entering: "transition ease-out duration-100"
-                From: "transform opacity-0 scale-95"
-                To: "transform opacity-100 scale-100"
-              Leaving: "transition ease-in duration-75"
-                From: "transform opacity-100 scale-100"
-                To: "transform opacity-0 scale-95"
-            -->
-					<!-- <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
-            </div> -->
 				</div>
 			</div>
 		</div>
 	</div>
 
-
-	<!-- TODO: Mobile menu, show/hide based on menu state. -->
-	<div class="sm:hidden" id="mobile-menu">
-      <div class="space-y-1 px-2 pb-3 pt-2">
-	<!-- Current: "text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-	<a href="/" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">SERVICES</a>
-        <a href="/" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">ABOUT</a>
-        <a href="/" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">CASES</a>
-	</div>
+	<!-- Mobile menu, show/hide based on menu state. -->
+	<div class={`sm:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`} id="mobile-menu">
+		<div class="space-y-1 px-2 pb-3 pt-2">
+			<!-- Current: "text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+			<a href="/" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">SERVICES</a>
+			<a href="/" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">ABOUT</a>
+			<a href="/" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">CASES</a>
+		</div>
 	</div>
 	<hr />
 </nav>
